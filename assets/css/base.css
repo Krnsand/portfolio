@@ -1,0 +1,11 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+h1 {
+  color: pink;
+}
+h1:hover {
+  color: blue;
+}/*# sourceMappingURL=base.css.map */
