@@ -1,0 +1,71 @@
+.test-button {
+  background-color: blue;
+  color: aliceblue;
+  width: 30%;
+  height: 60px;
+  margin-left: 30%;
+}
+
+.test-button:hover {
+  background-color: blueviolet;
+  transition: 1s;
+}
+
+.box {
+  width: 400px;
+  height: 200px;
+  margin: 50px 30%;
+  padding: 20px;
+  background-color: aqua;
+}
+
+.box:hover {
+  animation: color-change 2s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    background-color: aqua;
+  }
+
+  25% {
+    background-color: blue;
+  }
+
+  50% {
+    background-color: beige;
+  }
+
+  100% {
+    background-color: red;
+  }
+}
+
+.boll {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 4rem;
+  animation: fyrkant 4s linear infinite; /* Animationen upprepas oändligt */
+}
+
+@keyframes fyrkant {
+  0% {
+    transform: translate(0, 0); /* Start i nedre vänstra hörnet */
+  }
+  25% {
+    transform: translate(0, -300px); /* Flyttar upp till övre vänstra hörnet */
+  }
+  50% {
+    transform: translate(300px, -300px); /* Flyttar till övre högra hörnet */
+  }
+  75% {
+    transform: translate(300px, 0); /* Flyttar ner till nedre högra hörnet */
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
