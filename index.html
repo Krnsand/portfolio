@@ -1,26 +1,155 @@
 <!DOCTYPE html>
-<html lang="”sv”">
-  <head>
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-  </head>
-  <body>
-    <header>Typ logga, nav-meny</header>
-    <main>Viktigt huvudinfo</main>
-    <section class="sidan">
-      <button type="button" class="btn test-button">Base class</button>
-      <br />
-      <div class="fyrkant">This is the content.</div>
-      <br />
-      <div class="boll"></div>
-      <br />
-      <button onclick="myFunction()">Click me</button>
-      <p id="demo"></p>
+<html lang="sv">
 
-      <br />
-      <div class="box" id="box">Click me</div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karin Sandin — Portfolio</title>
+  <meta name="description" content="Portfolio for Frontend / Full‑Stack Developer" />
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#home" class="logo">KS</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <ul class="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero container" data-animate>
+      <div class="hero-content" data-animate style="--stagger: 60ms;">
+        <h1>Hi, I’m <span class="accent">Karin</span>.</h1>
+        <p class="lead">Frontend Developer with Full‑Stack experience, crafting accessible, performant web experiences.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="hero-media" data-animate style="--stagger: 120ms;">
+        <img src="assets/images/me.jpg" alt="Portrait of Karin" />
+      </div>
     </section>
-    <br />
-    <footer>Kontaktuppgifter typ</footer>
-    <script src="assets/js/script.js"></script>
-  </body>
+
+    <section id="about" class="section container" data-animate>
+      <h2>About</h2>
+      <p>
+        I’m a creative and social frontend developer who loves building things that are both functional and beautiful.
+        With experience in web development and full-stack technologies, I love turning ideas into intuitive interfaces
+        that feel good to use. My background in administration has also given me strong communication skills and an
+        understanding of how people and technology work together.
+        When I’m not coding, you’ll usually find me creating something with my hands, listening to music, caring for
+        plants, experimenting in the kitchen, or spending time with animals. These passions fuel my creativity and help
+        me bring a thoughtful, balanced perspective to my work.
+      </p>
+    </section>
+
+    <section id="projects" class="section container" data-animate>
+      <h2>Projects</h2>
+      <div class="grid projects-grid">
+        <article class="card" data-animate style="--stagger: 80ms;">
+          <h3>Klockspelet</h3>
+          <p>Klockspelet is an interactive light and sound installation in Gothenburg, Sweden, that reflects the rhythm
+            of the day and brings energy to its surroundings during the darkest hours of the year.
+            As the city’s great clock, it invites you to make the most of your time instead of simply letting it tick
+            away. A symbolic heart that beats to spread warmth.
+            Klockspelet is made as a collaboration by Jens Thoms Ivarsson, Stadsmiljöförvaltningen Göteborg and Jimmy
+            Herdberg and the Kokokaka Team.</p>
+          <div class="card-actions">
+            <a href="https://kokokaka.com/work/klockspelet" target="_blank" rel="noopener" class="link">Live</a>
+            <a href="#" target="_blank" rel="noopener" class="link">Code</a>
+          </div>
+          <div class="project-media">
+            <img src="assets/images/klockspel.avif" alt="Klockspelet project image" />
+          </div>
+        </article>
+        <article class="card" data-animate style="--stagger: 140ms;">
+          <h3>Bookify</h3>
+          <p>Discovering books that match personal interests and reading preferences can be challenging, as many
+            existing platforms rely on broad categories or popularity-based recommendations. Bookify addresses this
+            issue by exploring a more personalized and interactive approach to book discovery.</p>
+          <div class="card-actions">
+            <a href="https://bookify-lime-one.vercel.app" target="_blank" rel="noopener" class="link">Live</a>
+            <a href="https://github.com/Krnsand/booktinder" target="_blank" rel="noopener" class="link">Code</a>
+          </div>
+          <div class="project-media">
+            <img src="assets/images/book.png" alt="Bookify project image" />
+          </div>
+        </article>
+        <article class="card" data-animate style="--stagger: 200ms;">
+          <h3>Florea Juridik</h3>
+          <p>Florea Juridik is a law firm in Alingsås, Sweden, specializing in financial family law. The website was
+            designed to make complex legal processes simple, approachable, and user-friendly for clients facing
+            important life decisions</p>
+          <div class="card-actions">
+            <a href="https://floreajuridik.se/" target="_blank" rel="noopener" class="link">Live</a>
+            <a href="https://github.com/Krnsand/florea-juridik" target="_blank" rel="noopener" class="link">Code</a>
+          </div>
+          <div class="project-media">
+            <img src="assets/images/flo.png" alt="Bookify project image" />
+          </div>
+        </article>
+        <article class="card" data-animate style="--stagger: 260ms;">
+          <h3>Island Adventure</h3>
+          <p>Island Adventure is a small survival game set on a deserted island where you’ve been stranded for some
+            unknown reason. You need to make the right choices and gather various items to survive and hopefully get
+            rescued in the end. But WATCH OUT!!! There are plenty of dangers lurking in the island’s jungle, so you’ll
+            need to make the right decisions… or you might not survive…</p>
+          <div class="card-actions">
+            <a href="https://krnsand.github.io/island-adventure/" target="_blank" rel="noopener" class="link">Live</a>
+            <a href="https://github.com/Krnsand/island-adventure?tab=readme-ov-file" target="_blank" rel="noopener"
+              class="link">Code</a>
+          </div>
+          <div class="project-media">
+            <img src="assets/images/spel.png" alt="Bookify project image" />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section container" data-animate>
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>HTML5</li>
+        <li>CSS3 / Sass</li>
+        <li>JavaScript / TypeScript</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>Git / GitHub</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section container" data-animate>
+      <h2>Contact</h2>
+      <p>Want to collaborate or say hi? Reach out via email or LinkedIn.</p>
+      <div class="cta">
+        <!-- TODO: Replace links with your own -->
+        <a class="btn primary" href="mailto:you@example.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/karin-sandin-498073200/" target="_blank"
+          rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <p>© <span id="year"></span> Karin Sandin. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>
