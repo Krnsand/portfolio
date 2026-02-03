@@ -9,13 +9,15 @@
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lexend:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap"
+    rel="stylesheet" />
 </head>
 
 <body>
   <header class="site-header">
     <nav class="nav container">
-      <a href="#home" class="logo">KS</a>
+      <a href="#home" class="logo">Karin.</a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <ul class="nav-list">
         <li><a href="#home">Home</a></li>
@@ -58,12 +60,13 @@
 
     <section id="projects" class="section container" data-animate>
       <h2>Projects</h2>
-      <div class="grid projects-grid">
+      <div class="grid projects-grid" id="projects-grid">
         <article class="card" data-animate style="--stagger: 80ms;">
           <h3>Klockspelet</h3>
           <details class="project-details">
             <summary class="project-summary">Read more</summary>
-            <p>Klockspelet is an interactive light and sound installation in Gothenburg, Sweden, that reflects the rhythm
+            <p>Klockspelet is an interactive light and sound installation in Gothenburg, Sweden, that reflects the
+              rhythm
               of the day and brings energy to its surroundings during the darkest hours of the year.
               As the city’s great clock, it invites you to make the most of your time instead of simply letting it tick
               away. A symbolic heart that beats to spread warmth.
@@ -110,7 +113,7 @@
             <img src="assets/images/flo.png" alt="Bookify project image" />
           </div>
         </article>
-        <article class="card" data-animate style="--stagger: 80ms;">
+        <article class="card extra-project" data-animate style="--stagger: 80ms;">
           <h3>Island Adventure</h3>
           <details class="project-details">
             <summary class="project-summary">Read more</summary>
@@ -128,11 +131,12 @@
             <img src="assets/images/spel.png" alt="Island Adventure project image" />
           </div>
         </article>
-        <article class="card" data-animate style="--stagger: 80ms;">
+        <article class="card extra-project" data-animate style="--stagger: 80ms;">
           <h3>Purrfect Leap</h3>
           <details class="project-details">
             <summary class="project-summary">Read more</summary>
-            <p>An action-packed single and multiplayer game where you platform jump as a cat, collect time to survive, and
+            <p>An action-packed single and multiplayer game where you platform jump as a cat, collect time to survive,
+              and
               use different boosts to make your way through challenging levels.</p>
           </details>
           <div class="card-actions">
@@ -141,15 +145,15 @@
             <a href="https://github.com/Krnsand/purrfect-leap" target="_blank" rel="noopener" class="link">Code</a>
           </div>
           <div class="project-media">
-            <img src="assets/images/purrfect-leap.png" alt="Purrfect Leap project image" />
+            <img src="assets/images/purrfect-leap.png" alt="Purrfect Leap project image, cat jumping on platforms" />
           </div>
         </article>
-        <article class="card" data-animate style="--stagger: 80ms;">
+        <article class="card extra-project" data-animate style="--stagger: 80ms;">
           <h3>PlantCare</h3>
           <details class="project-details">
             <summary class="project-summary">Read more</summary>
-            <p>My very first project in frontend development. It is very basic, but considering I had at this time only
-              studied a couple of weeks, I am proud of it. And it is fun to see where I have gone from there.</p>
+            <p>This was my very first frontend project. It’s basic, but considering I had only been studying for a
+              couple of weeks at the time, I’m proud of it. It’s fun to see how far I’ve come since then.</p>
           </details>
           <div class="card-actions">
             <a href="https://krnsand.github.io/portfolio1_plant_care/index.html" target="_blank" rel="noopener"
@@ -158,9 +162,13 @@
               class="link">Code</a>
           </div>
           <div class="project-media">
-            <img src="assets/images/plants.png" alt="PlantCare project image" />
+            <img src="assets/images/plants.png" alt="Project image for PlantCare" />
           </div>
         </article>
+      </div>
+      <div class="projects-footer">
+        <button class="btn" id="projects-toggle" type="button" aria-expanded="false" aria-controls="projects-grid">See
+          more</button>
       </div>
     </section>
 
@@ -173,6 +181,7 @@
         <li>React</li>
         <li>React Native</li>
         <li>Svelte</li>
+        <li>SolidJS</li>
         <li>Node.js</li>
         <li>Next.js</li>
         <li>GitHub</li>
@@ -183,7 +192,7 @@
       <h2>Contact</h2>
       <p>Want to collaborate or say hi? Reach out via email or LinkedIn.</p>
       <div class="cta">
-        <a class="btn" href="mailto:you@example.com">Email</a>
+        <a class="btn" href="mailto:krnsandin@gmail.com">Email</a>
         <a class="btn primary" href="https://www.linkedin.com/in/karin-sandin-498073200/" target="_blank"
           rel="noopener">LinkedIn</a>
       </div>

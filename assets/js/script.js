@@ -32,6 +32,25 @@ if (yearEl) {
   yearEl.textContent = String(new Date().getFullYear());
 }
 
+// Projects list toggle (show/hide extra projects)
+(() => {
+  const toggleBtn = document.getElementById('projects-toggle');
+  const gridEl = document.getElementById('projects-grid');
+  if (!toggleBtn || !gridEl) return;
+
+  const updateUi = (isExpanded) => {
+    toggleBtn.textContent = isExpanded ? 'See less' : 'See more';
+    toggleBtn.setAttribute('aria-expanded', String(isExpanded));
+  };
+
+  updateUi(false);
+
+  toggleBtn.addEventListener('click', () => {
+    const isExpanded = gridEl.classList.toggle('is-expanded');
+    updateUi(isExpanded);
+  });
+})();
+
 // Projects accordion: only one "Read more" open at a time
 let activeProjectOverlay = null;
 let activeProjectOverlayCleanup = null;
@@ -46,6 +65,22 @@ const getPreviewText = (text, wordsCount = 7) => {
   return words.length > wordsCount ? `${preview}…` : `${preview}`;
 };
 
+const splitPreviewAndRest = (text, previewWordsCount = 8, fadedWordsCount = 4) => {
+  const cleaned = String(text || '').replace(/\s+/g, ' ').trim();
+  if (!cleaned) return { previewText: 'Read more…', restText: '' };
+
+  const words = cleaned.split(' ');
+
+  const previewWords = words.slice(0, previewWordsCount);
+  const fadedWords = words.slice(previewWordsCount, previewWordsCount + fadedWordsCount);
+  const restWords = words.slice(previewWordsCount + fadedWordsCount);
+
+  const previewText = previewWords.join(' ');
+  const fadedText = fadedWords.join(' ');
+  const restText = restWords.join(' ');
+  return { previewText, fadedText, restText };
+};
+
 const closeActiveProjectOverlay = () => {
   if (activeProjectOverlayCleanup) {
     activeProjectOverlayCleanup();
@@ -56,6 +91,7 @@ const closeActiveProjectOverlay = () => {
     activeProjectOverlay = null;
   }
   if (activeProjectSourceCard) {
+    setupFreezeHoverUntilLeave(activeProjectSourceCard);
     activeProjectSourceCard.classList.remove('is-open');
     activeProjectSourceCard.classList.remove('is-placeholder');
     activeProjectSourceCard = null;
@@ -73,6 +109,16 @@ const positionOverlayForCard = (cardEl, overlayEl) => {
   overlayEl.style.width = `${rect.width}px`;
 };
 
+const setupFreezeHoverUntilLeave = (cardEl) => {
+  if (!cardEl) return;
+  cardEl.classList.add('freeze-hover');
+  const onLeave = () => {
+    cardEl.classList.remove('freeze-hover');
+    cardEl.removeEventListener('mouseleave', onLeave);
+  };
+  cardEl.addEventListener('mouseleave', onLeave);
+};
+
 document.querySelectorAll('.project-details').forEach((detailsEl) => {
   const summaryEl = detailsEl.querySelector('.project-summary');
   const cardEl = detailsEl.closest('.card');
@@ -80,7 +126,25 @@ document.querySelectorAll('.project-details').forEach((detailsEl) => {
 
   const descriptionEl = detailsEl.querySelector('p');
   if (descriptionEl) {
-    summaryEl.textContent = getPreviewText(descriptionEl.textContent);
+    const { previewText, fadedText, restText } = splitPreviewAndRest(descriptionEl.textContent);
+    summaryEl.textContent = '';
+
+    const previewSpan = document.createElement('span');
+    previewSpan.className = 'project-preview';
+    previewSpan.textContent = previewText;
+    summaryEl.appendChild(previewSpan);
+
+    const fadedSpan = document.createElement('span');
+    fadedSpan.className = 'project-faded';
+    fadedSpan.textContent = fadedText ? ` ${fadedText}` : '';
+    summaryEl.appendChild(fadedSpan);
+
+    const restSpan = document.createElement('span');
+    restSpan.className = 'project-rest';
+    restSpan.textContent = restText ? ` ${restText}` : '';
+    summaryEl.appendChild(restSpan);
+
+    descriptionEl.textContent = '';
   }
 
   const toggleOverlay = () => {
@@ -104,6 +168,7 @@ document.querySelectorAll('.project-details').forEach((detailsEl) => {
     overlayEl.classList.add('card-overlay');
     overlayEl.classList.remove('is-placeholder');
     overlayEl.classList.add('is-open');
+    setupFreezeHoverUntilLeave(overlayEl);
     overlayEl.style.position = 'absolute';
     overlayEl.style.zIndex = '1000';
     overlayEl.style.pointerEvents = 'auto';
