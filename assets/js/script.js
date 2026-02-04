@@ -28,7 +28,7 @@ if (navToggle && navList) {
     if (theme === 'light') root.setAttribute('data-theme', 'light');
     else root.removeAttribute('data-theme');
 
-    toggleBtn.textContent = theme === 'light' ? 'Dark mode' : 'Light mode';
+    toggleBtn.textContent = theme === 'light' ? 'Dark' : 'Light';
     toggleBtn.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
   };
 
