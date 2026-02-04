@@ -9,6 +9,40 @@ if (navToggle && navList) {
   });
 }
 
+// Theme toggle (light/dark)
+(() => {
+  const root = document.documentElement;
+  const toggleBtn = document.getElementById('theme-toggle');
+  if (!toggleBtn) return;
+
+  const storageKey = 'theme';
+
+  const getPreferredTheme = () => {
+    const saved = localStorage.getItem(storageKey);
+    if (saved === 'light' || saved === 'dark') return saved;
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    return prefersLight ? 'light' : 'dark';
+  };
+
+  const applyTheme = (theme) => {
+    if (theme === 'light') root.setAttribute('data-theme', 'light');
+    else root.removeAttribute('data-theme');
+
+    toggleBtn.textContent = theme === 'light' ? 'Dark mode' : 'Light mode';
+    toggleBtn.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+  };
+
+  const initialTheme = getPreferredTheme();
+  applyTheme(initialTheme);
+
+  toggleBtn.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    const next = current === 'light' ? 'dark' : 'light';
+    localStorage.setItem(storageKey, next);
+    applyTheme(next);
+  });
+})();
+
 // Smooth scroll for internal links
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener('click', (e) => {

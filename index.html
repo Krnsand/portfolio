@@ -18,12 +18,14 @@
   <header class="site-header">
     <nav class="nav container">
       <a href="#home" class="logo">Karin.</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">Theme</button>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <ul class="nav-list">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="assets/resume/Karin%20Sandin%20CV%20eng.pdf" target="_blank" rel="noopener" aria-label="Open resume (PDF) in a new tab">Resume (PDF)</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -174,18 +176,48 @@
 
     <section id="skills" class="section container" data-animate>
       <h2>Skills</h2>
-      <ul class="skills">
-        <li>HTML5</li>
-        <li>CSS3 / Sass</li>
-        <li>JavaScript / TypeScript</li>
-        <li>React</li>
-        <li>React Native</li>
-        <li>Svelte</li>
-        <li>SolidJS</li>
-        <li>Node.js</li>
-        <li>Next.js</li>
-        <li>GitHub</li>
-      </ul>
+      <div class="skills-grid">
+        <div class="skills-group">
+          <h3>Web Design</h3>
+          <ul>
+            <li>UI/UX Design</li>
+            <li>Responsive Design</li>
+            <li>Wireframing</li>
+            <li>User Research</li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <h3>Frontend</h3>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3 / Sass</li>
+            <li>JavaScript / TypeScript</li>
+            <li>React</li>
+            <li>React Native</li>
+            <li>Svelte</li>
+            <li>SolidJS</li>
+            <li>Next.js</li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <h3>Backend</h3>
+          <ul>
+            <li>Node.js</li>
+            <li>Express.js</li>
+            <li>MongoDB</li>
+            <li>REST APIs</li>
+            <li>Vercel</li>
+          </ul>
+        </div>
+        <div class="skills-group">
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>Effective communication</li>
+            <li>Collaboration</li>
+            <li>Commitment</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section id="contact" class="section container" data-animate>
@@ -193,6 +225,7 @@
       <p>Want to collaborate or say hi? Reach out via email or LinkedIn.</p>
       <div class="cta">
         <a class="btn" href="mailto:krnsandin@gmail.com">Email</a>
+        <a class="btn" href="assets/resume/Karin%20Sandin%20CV%20eng.pdf" target="_blank" rel="noopener" aria-label="Open resume (PDF) in a new tab">Resume (PDF)</a>
         <a class="btn primary" href="https://www.linkedin.com/in/karin-sandin-498073200/" target="_blank"
           rel="noopener">LinkedIn</a>
       </div>
