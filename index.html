@@ -44,7 +44,20 @@
 <body>
   <header class="site-header">
     <nav class="nav container">
-      <a href="#home" class="logo">CodeAndThings.</a>
+      <a href="#home" class="logo" aria-label="CodeAndThings">
+        <span class="logo-cat" aria-hidden="true">
+          <span class="logo-cat-ear logo-cat-ear-left"></span>
+          <span class="logo-cat-ear logo-cat-ear-right"></span>
+          <span class="logo-cat-face">
+            <span class="logo-cat-eye logo-cat-eye-left"></span>
+            <span class="logo-cat-eye logo-cat-eye-right"></span>
+            <span class="logo-cat-nose"></span>
+          </span>
+        </span>
+        <span class="logo-word" aria-hidden="true">
+          <span class="logo-letter logo-letter-c">C</span><span class="logo-letter logo-fade">o</span><span class="logo-letter logo-fade">d</span><span class="logo-letter logo-fade">e</span><span class="logo-letter logo-letter-a">A</span><span class="logo-letter logo-fade">n</span><span class="logo-letter logo-fade">d</span><span class="logo-letter logo-letter-t">T</span><span class="logo-letter logo-fade">h</span><span class="logo-letter logo-fade">i</span><span class="logo-letter logo-fade">n</span><span class="logo-letter logo-fade">g</span><span class="logo-letter logo-fade">s</span><span class="logo-letter logo-fade">.</span>
+        </span>
+      </a>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">Theme</button>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <ul class="nav-list">
@@ -271,6 +284,7 @@
   </footer>
 
   <script src="assets/js/script.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 
 </html>
