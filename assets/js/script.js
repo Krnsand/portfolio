@@ -1,3 +1,44 @@
+// Language toggle (EN/SV)
+(() => {
+  const btn = document.getElementById('lang-toggle');
+  if (!btn) return;
+
+  const storageKey = 'lang';
+  let currentLang = localStorage.getItem(storageKey) || 'en';
+
+  const normalise = (str) => str.replace(/\s+/g, ' ').trim();
+
+  const applyLang = (lang) => {
+    document.documentElement.lang = lang === 'sv' ? 'sv' : 'en';
+    btn.textContent = lang === 'sv' ? 'EN' : 'SV';
+    btn.setAttribute('aria-label', lang === 'sv' ? 'Switch to English' : 'Byt till svenska');
+
+    document.querySelectorAll('[data-en][data-sv]').forEach((el) => {
+      const text = normalise(lang === 'sv' ? el.dataset.sv : el.dataset.en);
+      if (!text) return;
+      // For elements with child elements (like h1 with .accent span), only swap text nodes
+      if (el.children.length > 0) {
+        for (const node of el.childNodes) {
+          if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+            node.textContent = text.replace(/^(.*?)\bKarin\b.*$/, '$1');
+            break;
+          }
+        }
+        return;
+      }
+      el.textContent = text;
+    });
+  };
+
+  applyLang(currentLang);
+
+  btn.addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'sv' : 'en';
+    localStorage.setItem(storageKey, currentLang);
+    applyLang(currentLang);
+  });
+})();
+
 // Mobile navigation toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navList = document.querySelector('.nav-list');

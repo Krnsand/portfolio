@@ -27,12 +27,12 @@
   <meta name="twitter:image" content="https://codeandthings.com/assets/images/og-image.jpg" />
 
   <meta name="theme-color" content="#111111" />
-  <link rel="icon" href="assets/images/favicon/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png" />
+  <link rel="icon" href="assets/images/favicon/cat.png" />
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon/android-chrome-192x192.png" />
-  <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+  <link rel="manifest" href="assets/images/favicon/site.webmanifest" /> -->
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -58,65 +58,64 @@
           <span class="logo-letter logo-letter-c">C</span><span class="logo-letter logo-fade">o</span><span class="logo-letter logo-fade">d</span><span class="logo-letter logo-fade">e</span><span class="logo-letter logo-letter-a">A</span><span class="logo-letter logo-fade">n</span><span class="logo-letter logo-fade">d</span><span class="logo-letter logo-letter-t">T</span><span class="logo-letter logo-fade">h</span><span class="logo-letter logo-fade">i</span><span class="logo-letter logo-fade">n</span><span class="logo-letter logo-fade">g</span><span class="logo-letter logo-fade">s</span><span class="logo-letter logo-fade">.</span>
         </span>
       </a>
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">SV</button>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">Theme</button>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <ul class="nav-list">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#home" data-en="Home" data-sv="Hem">Home</a></li>
+        <li><a href="#about" data-en="About" data-sv="Om mig">About</a></li>
+        <li><a href="#projects" data-en="Projects" data-sv="Projekt">Projects</a></li>
+        <li><a href="#skills" data-en="Skills" data-sv="Kompetenser">Skills</a></li>
         <li><a href="assets/resume/Karin%20Sandin%20CV%20eng.pdf" target="_blank" rel="noopener"
-            aria-label="Open resume (PDF) in a new tab">Resume (PDF)</a></li>
-        <li><a href="#contact">Contact</a></li>
+            aria-label="Open resume (PDF) in a new tab" data-en="Resume (PDF)" data-sv="CV (PDF)">Resume (PDF)</a></li>
+        <li><a href="#contact" data-en="Contact" data-sv="Kontakt">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="home">
     <section class="hero container" data-animate>
-      <div class="hero-content" data-animate style="--stagger: 60ms;">
-        <h1>Hi, I’m <span class="accent">Karin</span>.</h1>
-        <p class="lead">Frontend Developer with full-stack experience and a love for accessibility and inclusive design.
-          <br />
-          I work with code, and things.
+      <div class="hero-media" data-animate style="--stagger: 60ms;">
+        <img src="assets/images/me.jpg" alt="Karin" />
+      </div>
+      <div class="hero-content" data-animate style="--stagger: 120ms;">
+        <h1 data-en="Hi, I'm Karin." data-sv="Hej, jag heter Karin.">Hi, I’m <span class="accent">Karin</span>.</h1>
+        <p class="lead" data-en="Frontend Developer with full-stack experience and a love for accessibility and inclusive design." data-sv="Frontendutvecklare med fullstack-erfarenhet och ett stort intresse för tillgänglighet och inkluderande design.">Frontend Developer with full-stack experience and a love for accessibility and inclusive design.
         </p>
         <div class="cta">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="#contact">Contact</a>
+          <a class="btn primary" href="#projects" data-en="View Projects" data-sv="Se projekt">View Projects</a>
+          <a class="btn" href="#contact" data-en="Contact" data-sv="Kontakt">Contact</a>
         </div>
-      </div>
-      <div class="hero-media" data-animate style="--stagger: 120ms;">
-        <img src="assets/images/me.jpg" alt="Karin" />
       </div>
     </section>
 
     <section id="about" class="section container" data-animate>
-      <h2>About me</h2>
-      <p>
+      <h2 data-en="About me" data-sv="Om mig">About me</h2>
+      <p data-en="
         I’m a creative and social frontend developer who loves building things that are both functional and beautiful.
         With experience in web development and full-stack technologies, I love turning ideas into intuitive interfaces
         that feel good to use. My background in administration has also given me strong communication skills and an
         understanding of how people and technology work together.
         When I’m not coding, you’ll usually find me creating something with my hands, listening to music, caring for
         plants, experimenting in the kitchen, or volunteering with animals. These passions fuel my creativity and help
-        me bring a thoughtful, balanced perspective to my work.
+        me bring a thoughtful, balanced perspective to my work." data-sv="Jag är en kreativ och social frontendutvecklare som älskar att bygga saker som är både funktionella och vackra. Med erfarenhet inom webbutveckling och fullstack-teknologier älskar jag att omvandla idéer till intuitiva gränssnitt som känns bra att använda. Min bakgrund inom administration har också gett mig starka kommunikationsförmågor och en förståelse för hur människor och teknik fungerar tillsammans. När jag inte kodar hittar du mig vanligtvis skapande med mina händer, lyssnande på musik, omsorg tagen av växter, experimentera i köket eller volontära med djur. Dessa passioner driver min kreativitet och hjälper mig att bära en tänkande, balanserad perspektiv till mitt arbete.">
       </p>
     </section>
 
     <section id="projects" class="section container" data-animate>
-      <h2>Projects</h2>
+      <h2 data-en="Projects" data-sv="Projekt">Projects</h2>
       <div class="grid projects-grid" id="projects-grid">
         <article class="card" data-animate style="--stagger: 80ms;">
           <h3>Klockspelet</h3>
           <details class="project-details">
             <summary class="project-summary">Read more</summary>
-            <p>Klockspelet is an interactive light and sound installation in Gothenburg, Sweden, that reflects the
+            <p data-en="Klockspelet is an interactive light and sound installation in Gothenburg, Sweden, that reflects the
               rhythm
               of the day and brings energy to its surroundings during the darkest hours of the year.
               As the city’s great clock, it invites you to make the most of your time instead of simply letting it tick
               away. A symbolic heart that beats to spread warmth.
               Klockspelet is made as a collaboration by Jens Thoms Ivarsson, Stadsmiljöförvaltningen Göteborg and Jimmy
-              Herdberg and the Kokokaka Team.</p>
+              Herdberg and the Kokokaka Team." data-sv="Klockspelet är en interaktiv ljus- och ljudinstallation i Göteborg, Sverige, som reflekterar dagens takt och ger energi till dess omgivningar under de mörkaste timmarna på året. Som stadsens stora klocka bjuder den in till att göra det bästa av tiden istället för att bara låta den ticka bort. Ett symboliskt hjärta som slår för att sprida värme. Klockspelet är skapat i samarbete med Jens Thoms Ivarsson, Stadsmiljöförvaltningen Göteborg och Jimmy Herdberg och Kokokaka Team."></p>
           </details>
           <div class="card-actions">
             <a href="https://kokokaka.com/work/klockspelet" target="_blank" rel="noopener" class="link">Live</a>
@@ -130,10 +129,11 @@
           <h3>Bookify</h3>
           <details class="project-details">
             <summary class="project-summary">Read more</summary>
-            <p>Discovering books that match personal interests and reading preferences can be challenging, as many
+            <p data-en="Discovering books that match personal interests and reading preferences can be challenging, as many
               existing platforms rely on broad categories or popularity-based recommendations. Bookify addresses this
               issue by exploring a more personalized and interactive approach to book discovery.
-              It is still a work in progress, but something I am excited to keep working on!</p>
+              It is still a work in progress, but something I am excited to keep working on!" data-sv="Att hitta böcker som matchar ens personliga intressen och läsningspreferenser kan vara utmanande, särskilt eftersom många befintliga plattformar förlitar sig på breda kategorier eller popularitetsbaserade rekommendationer. Bookify adresserar detta genom att utforska ett mer personligt och interaktivt tillvägagångssätt för bokupptäckning.
+              Det är ett ofärdigt projekt, men ett jag är taggad på att fortsätta arbeta med!"></p>
           </details>
           <div class="card-actions">
             <a href="https://bookify-lime-one.vercel.app" target="_blank" rel="noopener" class="link">Live</a>
@@ -147,9 +147,9 @@
           <h3>Florea Juridik</h3>
           <details class="project-details">
             <summary class="project-summary">Read more</summary>
-            <p>Florea Juridik is a law firm in Alingsås, Sweden, specializing in financial family law. The website was
+            <p data-en="Florea Juridik is a law firm in Alingsås, Sweden, specializing in financial family law. The website was
               designed to make complex legal processes simple, approachable, and user-friendly for clients facing
-              important life decisions</p>
+              important life decisions" data-sv="Florea Juridik är ett juridikbyrå i Alingsås, Sverige, som specialiserar sig på familjerätt och finansiell rätt. Webbplatsen är designad för att göra komplexa juridiska processer enkla, tillgängliga och användarvänliga för klienter som står inför viktiga och potentiellt jobbiga livsbeslut."></p>
           </details>
           <div class="card-actions">
             <a href="https://floreajuridik.se/" target="_blank" rel="noopener" class="link">Live</a>
@@ -163,10 +163,10 @@
           <h3>Island Adventure</h3>
           <details class="project-details">
             <summary class="project-summary">Read more</summary>
-            <p>Island Adventure is a small survival game set on a deserted island where you’ve been stranded for some
+            <p data-en="Island Adventure is a small survival game set on a deserted island where you’ve been stranded for some
               unknown reason. You need to make the right choices and gather various items to survive and hopefully get
               rescued in the end. But WATCH OUT!!! There are plenty of dangers lurking in the island’s jungle, so you’ll
-              need to make the right decisions… or you might not survive…</p>
+              need to make the right decisions… or you might not survive…" data-sv="Island Adventure är ett litet överlevnadsspel där du har blivit strandad på en öde ö för någon okänd anledning. Du måste fatta rätt val och samla olika föremål för att överleva och hoppas att bli räddad i slutet. Men VAR FÖRSIKTIG!!! Det finns många faror som lurar i öns djungel, så du måste fatta rätt beslut… eller så överlever du inte…"></p>
           </details>
           <div class="card-actions">
             <a href="https://krnsand.github.io/island-adventure/" target="_blank" rel="noopener" class="link">Live</a>
@@ -181,9 +181,10 @@
           <h3>Purrfect Leap</h3>
           <details class="project-details">
             <summary class="project-summary">Read more</summary>
-            <p>An action-packed single and multiplayer game where you platform jump as a cat, collect time to survive,
+            <p data-en="An action-packed single and multiplayer game where you platform jump as a cat, collect time to survive,
               and
-              use different boosts to make your way through challenging levels.</p>
+              use different boosts to make your way through challenging levels." data-sv="Ett spännande ensam- och flerspelarspel där du plattformssalta som en katt, samlar tid för att överleva och
+              använder olika boostar för att komma igenom utmanande nivåer."></p>
           </details>
           <div class="card-actions">
             <a href="https://purrfect-leap-vvws-bm7qtaqlp-karins-projects-ba1a4432.vercel.app/" target="_blank"
@@ -198,8 +199,8 @@
           <h3>PlantCare</h3>
           <details class="project-details">
             <summary class="project-summary">Read more</summary>
-            <p>This was my very first frontend project. It’s basic, but considering I had only been studying for a
-              couple of weeks at the time, I’m proud of it. It’s fun to see how far I’ve come since then.</p>
+            <p data-en="This was my very first frontend project. It’s basic, but considering I had only been studying for a
+              couple of weeks at the time, I’m proud of it. It’s fun to see how far I’ve come since then." data-sv="Detta var mitt första frontend-projekt. Det är enkelt, men eftersom jag bara hade studerat i ett par veckor då känner jag stolthet över det. Det är roligt att se hur långt jag har kommit sedan då."></p>
           </details>
           <div class="card-actions">
             <a href="https://krnsand.github.io/portfolio1_plant_care/index.html" target="_blank" rel="noopener"
@@ -213,16 +214,16 @@
         </article>
       </div>
       <div class="projects-footer">
-        <button class="btn" id="projects-toggle" type="button" aria-expanded="false" aria-controls="projects-grid">See
+        <button class="btn" id="projects-toggle" type="button" aria-expanded="false" aria-controls="projects-grid" data-en="See more" data-sv="Visa fler">See
           more</button>
       </div>
     </section>
 
     <section id="skills" class="section container" data-animate>
-      <h2>Skills</h2>
+      <h2 data-en="Skills" data-sv="Kompetenser">Skills</h2>
       <div class="skills-grid">
         <div class="skills-group">
-          <h3>Web Design</h3>
+          <h3 data-en="Web Design" data-sv="Webbdesign">Web Design</h3>
           <ul>
             <li>UI/UX Design</li>
             <li>Responsive Design</li>
@@ -254,19 +255,19 @@
           </ul>
         </div>
         <div class="skills-group">
-          <h3>Soft Skills</h3>
+          <h3 data-en="Soft Skills" data-sv="Mjuka färdigheter">Soft Skills</h3>
           <ul>
-            <li>Effective communication</li>
-            <li>Collaboration</li>
-            <li>Commitment</li>
+            <li data-en="Effective communication" data-sv="Effektiv kommunikation">Effective communication</li>
+            <li data-en="Collaboration" data-sv="Samarbete">Collaboration</li>
+            <li data-en="Commitment" data-sv="Engagemang">Commitment</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section id="contact" class="section container" data-animate>
-      <h2>Contact</h2>
-      <p>Want to collaborate or say hi? Reach out via email or LinkedIn.</p>
+      <h2 data-en="Contact" data-sv="Kontakt">Contact</h2>
+      <p data-en="Want to collaborate or say hi? Reach out via email or LinkedIn." data-sv="Vill du samarbeta eller bara säga hej? Hör av dig via e-post eller LinkedIn.">Want to collaborate or say hi? Reach out via email or LinkedIn.</p>
       <div class="cta">
         <a class="btn" href="mailto:karin@codeandthings.com">Email</a>
         <a class="btn" href="assets/resume/Karin%20Sandin%20CV%20eng.pdf" target="_blank" rel="noopener"
